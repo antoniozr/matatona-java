@@ -15,7 +15,6 @@ public class FileWriterTest01 {
         try ( FileWriter fw = new FileWriter(file, true)){
                 fw.write("Dev dojo melhor curso de Java do\nbrasil ");
                 fw.flush();
-
             } catch(IOException e){
                 throw new RuntimeException(e);
             }
