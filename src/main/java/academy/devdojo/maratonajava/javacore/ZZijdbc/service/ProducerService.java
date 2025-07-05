@@ -11,6 +11,10 @@ public class ProducerService {
         ProducerRepository.save(producer);
     }
 
+    public static void saveTransaction(List<Producer> producers) {
+        ProducerRepository.saveTransaction(producers);
+    }
+
     public static void delete(Integer id) {
         requireValidId(id);
         ProducerRepository.delete(id);
@@ -26,41 +30,43 @@ public class ProducerService {
         ProducerRepository.updatePreparedStatement(producer);
     }
 
-    public static List<Producer> findAll () {
+    public static List<Producer> findAll() {
         return ProducerRepository.findAll();
     }
 
-    public static List<Producer> findByName (String name) {
+    public static List<Producer> findByName(String name) {
         return ProducerRepository.findByName(name);
     }
 
-    public static List<Producer> findByNamePreparedStatement (String name) {
+    public static List<Producer> findByNamePreparedStatement(String name) {
         return ProducerRepository.findByNamePreparedStatement(name);
     }
-    public static List<Producer> findByNameCallableStatement (String name) {
+
+    public static List<Producer> findByNameCallableStatement(String name) {
         return ProducerRepository.findByNameCallableStatement(name);
     }
 
-    public static void showProducerMetaData () {
+    public static void showProducerMetaData() {
         ProducerRepository.showProducerMetaData();
     }
 
-    public static void showDriverMetaData () {
+    public static void showDriverMetaData() {
         ProducerRepository.showDriverMetaData();
     }
-    public static void showTypeScrollWorking () {
+
+    public static void showTypeScrollWorking() {
         ProducerRepository.showTypeScrollWorking();
     }
 
-    public static List<Producer> findByNameAndUpdateToUpperCase (String name) {
+    public static List<Producer> findByNameAndUpdateToUpperCase(String name) {
         return ProducerRepository.findByNameAndUpdateToUpperCase(name);
     }
 
-    public static List<Producer> findByNameAndInsertWhenNotFound (String name) {
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name) {
         return ProducerRepository.findByNameAndInsertWhenNotFound(name);
     }
 
-    public static void findByNameAndDelete (String name) {
+    public static void findByNameAndDelete(String name) {
         ProducerRepository.findByNameAndDelete(name);
     }
 
